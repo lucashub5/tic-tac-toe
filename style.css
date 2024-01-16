@@ -1,0 +1,137 @@
+@font-face {
+    font-family: 'quicksand';
+    src: url('Quicksand.ttf');
+}
+
+@font-face {
+    font-family: 'permanent';
+    src: url('PermanentMarker-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    font-family: 'quicksand';
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+main {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 40px 1fr 20px;
+}
+
+header, section, footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr max(400px) 1fr;
+    grid-template-rows: 0.5fr max(400px) 1fr;
+}
+
+.border-container {
+    background: black;
+    width: 100%;
+    height: 100%;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.border {
+    outline: 2px solid white;
+    font-family: 'permanent';
+    color: white;
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.border:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.reset {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+}
+
+.result-game-text {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.button-reset, form button {
+    display: none;
+    width: 90px;
+    height: 30px;
+    border-radius: 10px;
+    outline: 0px;
+    border: 1px solid black;
+    font-weight: bold;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-reset:active {
+    background: black;
+}
+
+.form-container {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    background: white;
+}
+
+input {
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 150px;
+    height: 35px;
+    padding-left: 5px;
+    box-sizing: border-box;
+}
+
+form button {
+    display: flex;
+}
+
+
+
+
