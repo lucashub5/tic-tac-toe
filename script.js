@@ -50,6 +50,9 @@ const Game = (() => {
                 board.board[3 + i] === currentPlayer.symbol &&
                 board.board[6 + i] === currentPlayer.symbol
                 ) { 
+                    document.getElementById(i).classList.add("win-color");
+                    document.getElementById(3 + i).classList.add("win-color");
+                    document.getElementById(6 + i).classList.add("win-color");
                 return true; //ganador en columna
             }
         }
@@ -58,6 +61,9 @@ const Game = (() => {
                 board.board[1 + (3 * i)] === currentPlayer.symbol &&
                 board.board[2 + (3 * i)] === currentPlayer.symbol
                 ) { 
+                    document.getElementById(3 * i).classList.add("win-color");
+                    document.getElementById(1 + (3 * i)).classList.add("win-color");
+                    document.getElementById(2 + (3 * i)).classList.add("win-color");
                 return true; //ganador en fila
             }
         }
@@ -66,6 +72,9 @@ const Game = (() => {
                 board.board[4] === currentPlayer.symbol && 
                 board.board[8 - i] === currentPlayer.symbol
                 ) {
+                    document.getElementById(i).classList.add("win-color");
+                    document.getElementById(4).classList.add("win-color");
+                    document.getElementById(8 - i).classList.add("win-color");
                 return true; //ganador en diagonal
             }
         }
@@ -125,11 +134,15 @@ const Game = (() => {
                 printBoard(board);
                 this.style.display = 'none';
                 printTurn(game.getCurrentPlayer(), '');
+                for (let i = 0; i < board.board.length; i++) {
+                    const boardContainer = document.getElementById(i);
+                    boardContainer.classList.remove("win-color");
+                }
             });
 
             for (let i = 0; i < board.board.length; i++) {
                 const boardContainer = document.getElementById(i);
-    
+
                 boardContainer.addEventListener('click', (event) => {
                     game.makeMove(i);
                 });
